@@ -6,3 +6,9 @@ file_tree:
 
 tests:
 	go test -v  ./...
+
+build:
+	docker build -t simpleapp . 
+
+up:
+	docker-compose -f docker-compose.yml up
