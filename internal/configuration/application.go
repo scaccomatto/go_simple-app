@@ -21,6 +21,11 @@ const (
 type (
 	AppConf struct {
 		Http Http `mapstructure:"HTTP"`
+		App  App  `mapstructure:"APP"`
+	}
+
+	App struct {
+		Name string `mapstructure:" NAME"`
 	}
 
 	Http struct {
