@@ -2,7 +2,7 @@
 
 This can be a base structure for golang module or simple app. It is not a web server.  
 
-In the Makefile you can find some useful commands for creating mocks and run tests.  
+In the Makefile you can find some useful commands for creating mocks, run tests, build...  
 
 This is a "layered architecture" application. Here a quick description:  
 * cmd: it contains the main file that points to the application staring point.

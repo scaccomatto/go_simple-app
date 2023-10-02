@@ -7,8 +7,14 @@ file_tree:
 tests:
 	go test -v  ./...
 
-build:
+docker_build:
 	docker build -t simpleapp . 
 
-up:
+nerdctl_build:
+	nerdctl build -t simpleapp . 
+
+docker_up:
 	docker-compose -f docker-compose.yml up
+
+nerdctl_up:
+	nerdctl compose up
