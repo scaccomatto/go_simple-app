@@ -2,6 +2,7 @@ package service
 
 import (
 	"errors"
+	"fmt"
 
 	"paru.net/gosimpleapp/internal/database"
 	"paru.net/gosimpleapp/pkg/dto"
@@ -17,8 +18,18 @@ func NewFooService(inDb database.Database) Foo {
 	}
 }
 
-func (sf Foo) DoSomethingWithFoo() {
-	///
+func (sf Foo) DoSomething() error {
+	sf.InsertFoo("first", 1)
+	sf.InsertFoo("second", 2)
+
+	exp, err := sf.GetFoo("2")
+	if err != nil {
+		return err
+	}
+
+	fmt.Printf("%v \n", exp)
+	sf.GetFoo("1")
+	return nil
 }
 
 func (sf Foo) InsertFoo(name string, val int) error {

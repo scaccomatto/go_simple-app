@@ -8,7 +8,7 @@ import (
 )
 
 func Start() error {
-
+	// getting configuration
 	if err := configuration.LoadAppConfig(); err != nil {
 		log.Error().Err(err).Msg("no environment config found, using default config")
 		return err
@@ -21,8 +21,9 @@ func Start() error {
 	fooSvc := service.NewFooService(db)
 
 	// doing something with it...
-	fooSvc.DoSomethingWithFoo()
+	fooSvc.DoSomething()
 
+	// TODO: gracefully shutdown
 	return nil
 
 }
